@@ -63,6 +63,17 @@ def idiomas():
     datos = cursor.fetchall()
     return render_template("idiomas.html", comentarios = datos)
 
+@app.route('/vacantes')
+def vacantes():
+    conn = pymysql.connect(host='localhost', user='root', passwd='', db='rh3' )
+    cursor = conn.cursor()
+
+    cursor.execute('select idPuesto, nomPuesto from puesto order by idPuesto')
+    datos = cursor.fetchall()
+
+    return render_template("vacantes.html", pue = datos, dat='   ', catArea = '   ', catEdoCivil = '   ', catEscolaridad = '   ',
+                           catGradoAvance = '    ', catCarrera = '    ', catIdioma = ' ', catHabilidad = ' ')
+
 @app.route('/area_editar/<string:id>')
 def area_editar(id):
     conn = pymysql.connect(host='localhost', user='root', passwd='', db='rh3')
