@@ -73,6 +73,10 @@
        </select>
    </div>
 </form>
+<a
+bgcolor="#2B2D83" width="6%"
+class="btn btn-outline-info btn-sm "
+href="javascript:genPDF()">Crear pdf</a>
 <br></br>
 <table  width="100%" border="1" cellpadding="0" bordercolor="#000000">
     <tbody>
@@ -114,15 +118,30 @@
     </tbody>
     </table>
 
-    <a href="javascript:genPDF()">Crear pdf</a>
     <script type="text/javascript" src="/static/js/jspdf.min.js"></script>
     <script type="text/javascript">
         function genPDF(){
             var doc=new jsPDF();
             let mensaje=document.getElementById('jornada').value;
+            let mensaje2=document.getElementById('remunMensual').value;
+            let mensaje3=document.getElementById('prestaciones').value;
+            let mensaje4=document.getElementById('descripcionGeneral').value;
+            let mensaje5=document.getElementById('funciones').value;
+            let mensaje6=document.getElementById('edad').value;
+            let mensaje7=document.getElementById('sexo').value;
+            let mensaje8=document.getElementById('idEstadoCivil').value;
+            let mensaje9=document.getElementById('idEscolaridad').value;
+            let mensaje10=document.getElementById('idGradoAvance').value;
             doc.text(20,20,mensaje);
-            doc.addPage();
-            doc.text(20,20,'Mi trabajo!!');
+            doc.text(20,40,mensaje2);
+            doc.text(20,60,mensaje3);
+            doc.text(20,80,mensaje4);
+            doc.text(20,100,mensaje5);
+            doc.text(20,120,mensaje6);
+            doc.text(20,140,mensaje7);
+            doc.text(20,160,mensaje8);
+            doc.text(20,180,mensaje9);
+            doc.text(20,200,mensaje10);
             doc.save('Test.pdf');
         }
     </script>
