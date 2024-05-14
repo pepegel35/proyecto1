@@ -5,10 +5,6 @@
 
 
 <br>
-<h3>
-    <CENTER> <b> Detalle: </b> </CENTER>
-
-</h3>
 <br>
 
 <form class="row g-3"  action="/puesto_fdetalle/" method="GET">
@@ -73,50 +69,9 @@
        </select>
    </div>
 </form>
-<a
-bgcolor="#2B2D83" width="6%"
-class="btn btn-outline-info btn-sm "
-href="javascript:genPDF()">Crear pdf</a>
 <br></br>
-<table  width="100%" border="1" cellpadding="0" bordercolor="#000000">
-    <tbody>
-    <tr>
-    <td color="FFFFFF" bgcolor="#465F5A" valign="top">
-    <center><h3>VACANTES REGISTRADAS</h3></center>
-    <table class="table table-dark table-hover" width="100%" border="1" cellpadding="0" bordercolor="#000000">
-    <thead>
-      <tr>
-        <td color="white" bgcolor="blue">Nombre de la Vacante</td>
+<a bgcolor="#2B2D83" width="6%" class="btn btn-outline-info btn-sm " href="javascript:genPDF()">Crear pdf</a>
 
-        <td color="white" bgcolor="black"></td>
-        <td color="white" bgcolor="black"></td>
-        <td color="white" bgcolor="black"> <rigth><h2><a href="/puesto_agrOp2" class="btn btn-dark btn-sm">Agregar</a></h2></rigth>  </td>
-      </tr>
-    </thead>
-    <tbody>
-    {% for i in pue %}
-        <tr>
-        <td width="80%">
-           {{i.1}}
-        </td>
-
-        <td bgcolor="#2B2D83" width="6%">
-        <center><a href="/puesto_fdetalle/{{i.0}}" class="btn btn-outline-info btn-sm ">Detalle</a></center>
-        </td>
-        <td bgcolor="#2B2D83" width="6%">
-        <center><a href="/puesto_editar/{{i.0}}" class="btn btn-outline-info btn-sm ">Editar</a></center>
-        </td>
-        <td bgcolor="#3C3EC5" width="6%">
-        <center><a href="/puesto_borrar/{{i.0}}" class="btn btn-outline-primary btn-sm">Borrar</a></center>
-        </td>
-        </tr>
-    {% endfor %}
-    </tbody>
-    </table>
-    </td>
-    </tr>
-    </tbody>
-    </table>
 
     <script type="text/javascript" src="/static/js/jspdf.min.js"></script>
     <script type="text/javascript">
