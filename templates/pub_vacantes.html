@@ -1,7 +1,8 @@
 {% extends "layout.html" %}
 
 {% block content %}
-
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/static/css/design.css">
 
 
 <br>
@@ -70,7 +71,7 @@
     </div>
    <div class="col-md-4">
     <label for="idFormaPubl" class="form-label">Forma de Publicacion</label>
-     <select type="text" class="form-control" name="idFormaPubl" id="idFormaPubl" value="{{catGradoAvance.1}}">
+     <select type="text" class="form-control" name="idFormaPubl" id="idFormaPubl" value="{{catGradoAvance.1}}" >
         <option></option>
         <option>Redes Sociales</option>
         <option>Television</option>
@@ -84,7 +85,28 @@
 <br></br>
 <a bgcolor="#2B2D83" width="6%" class="btn btn-outline-info btn-sm " href="javascript:genPDF()">Crear pdf</a>
 
-<a bgcolor="#2B2D83" width="6%" class="btn btn-outline-info btn-sm ">Publicar Anuncio</a>
+<button onclick="validarFormulario()" bgcolor="#2B2D83" width="6%" class="btn btn-outline-info btn-sm">Publicar Anuncio</button>
+
+<script>
+    function validarFormulario() {
+        var select = document.getElementById('idFormaPubl');
+        if (select.value === "") {
+            swal("Por favor", "seleccione una opción.","error");
+            return false;
+        } else {
+            swal({
+                title: "Vacantes Publicadas",
+                text: "Redirigiendo...",
+                icon: "success",
+                button: false,
+                timer: 5000 // Duración de la alerta en milisegundos
+            }).then(function() {
+                window.location.href = "/vacantes_pub";
+            });
+        }
+        return true;
+    }
+</script>
 
 
     <script type="text/javascript" src="/static/js/jspdf.min.js"></script>

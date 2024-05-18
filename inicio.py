@@ -114,13 +114,17 @@ def vacantes_publ(idV):
 
 @app.route('/pub_vacantes')
 def pub_vacantes():
+    return render_template("pub_vacantes.html")
+
+@app.route('/vacantes_pub')
+def vacantes_pub():
     conn = pymysql.connect(host='localhost', user='root', passwd='', db='rh3' )
     cursor = conn.cursor()
 
     cursor.execute('select idPuesto, nomPuesto from puesto order by idPuesto')
     datos = cursor.fetchall()
 
-    return render_template("pub_vacantes.html", pue = datos, dat='   ', catArea = '   ', catEdoCivil = '   ', catEscolaridad = '   ',
+    return render_template("vacantes.html", pue = datos, dat='   ', catArea = '   ', catEdoCivil = '   ', catEscolaridad = '   ',
                            catGradoAvance = '    ', catCarrera = '    ', catIdioma = ' ', catHabilidad = ' ')
 
 @app.route('/area_editar/<string:id>')

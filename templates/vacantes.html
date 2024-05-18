@@ -2,7 +2,7 @@
 
 {% block content %}
 
-
+</-Tabla de vacantes Anunciadas ->
     <table  width="100%" border="1" cellpadding="0" bordercolor="#000000">
     <tbody>
     <tr>
@@ -43,4 +43,38 @@
     </tbody>
     </table>
 
+<br></br>
+<br></br>
+
+  </-Tabla de vacantes Publicadas ->
+    <table  width="100%" border="1" cellpadding="0" bordercolor="#000000">
+      <tbody>
+      <tr>
+      <td color="FFFFFF" bgcolor="#465F5A" valign="top">
+      <center><h3>VACANTES PUBLICADAS</h3></center>
+      <table class="table table-dark table-hover" width="100%" border="1" cellpadding="0" bordercolor="#000000">
+      <thead>
+        <tr>
+          <td color="white" bgcolor="blue">Nombre de la vacante</td>
+  
+          <td color="white" bgcolor="black"></td>
+        </tr>
+      </thead>
+      <tbody>
+      {% for i in pue %}
+          <tr>
+          <td width="80%">
+             {{i.1}}
+          </td>
+          <td bgcolor="#3C3EC5" width="6%">
+          <center><a href="/puesto_borrar/{{i.0}}" class="btn btn-outline-primary btn-sm">Borrar</a></center>
+          </td>
+          </tr>
+      {% endfor %}
+      </tbody>
+      </table>
+      </td>
+      </tr>
+      </tbody>
+      </table>
 {% endblock %}
