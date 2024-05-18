@@ -1,6 +1,8 @@
 {% extends "layout.html" %}
 
 {% block content %}
+<link rel="stylesheet" type="text/css" href="/static/css/design.css">
+
 <form action="/area_fedita/{{comentar}}" method="post">
 <!--form action="/area_fedita/{{comentar.0}}" method="post"-->
    <div class="container">
@@ -17,5 +19,7 @@
     </div>
           <button type="submit" class="btn btn-primary">Actualizar</button>
 </form>
-
+<div id="particles-js"></div>
+<script src="/static/js/particles.min.js"></script>
+<script src="/static/js/app.js"></script>
 {% endblock %}
