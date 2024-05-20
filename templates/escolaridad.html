@@ -3,10 +3,10 @@
 {% block content %}
 <link rel="stylesheet" type="text/css" href="/static/css/design.css">
 
-    <table width="100%" border="1" cellpadding="0" bordercolor="#000000">
+    <table width="100%" border="2" cellpadding="0" bordercolor="#000000">
     <tbody>
     <tr>
-    <td color="FFFFFF" bgcolor="#465F5A" valign="top">
+    <td color="FFFFFF" bgcolor="#5E936F" valign="top">
     <right><h3><a href="/area_agregar">Agregar ESCOLARIDAD</a></h3></right>
     <center><h3>ESCOLARIDADES REGISTRADAS</h3></center>
     <table width="100%" border="1" cellpadding="0" bordercolor="#000000">
@@ -23,14 +23,15 @@
         <td width="80%">
            {{i.1}}
         </td>
-
-        <td bgcolor="#2B2D83" width="8%">
+ <!--Edita y Borra parte de los bloques /area_editar/{{i.0}}"editar y borrar, es lo mismo que con los anteriores pero ahora en este-->
+        <td bgcolor="#586F60" width="8%">
         <center><a href="/area_editar/{{i.0}}" style="...">Editar</a></center>
         </td>
-        <td bgcolor="#3C3EC5" width="8%">
+        <td bgcolor="#49504B" width="8%">
         <center><a href="/area_borrar/{{i.0}}" style="...">Borrar</a></center>
         </td>
         </tr>
+         <!--practicamente en todos se hace casi lo mismo cambiando datos y alguna que otra funcion-->
     {% endfor %}
     </tbody>
     </table>

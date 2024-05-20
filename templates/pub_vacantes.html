@@ -83,10 +83,11 @@
     </div>
 </form>
 <br></br>
-<a bgcolor="#2B2D83" width="6%" class="btn btn-outline-info btn-sm " href="javascript:genPDF()">Crear pdf</a>
+<a bgcolor="#2B2D83" width="6%" class="btn btn-outline-info btn-sm " href="javascript:genPDF()">Crear PDF</a>
 
 <button onclick="validarFormulario()" bgcolor="#2B2D83" width="6%" class="btn btn-outline-info btn-sm">Publicar Anuncio</button>
-
+ <!--Aquí lo que hace es que valide el forumlario, Obteniendo el valor con id="idFormaPublSi el valor está vacío, muestra una alerta utilizando la biblioteca swal (probablemente SweetAlert) indicando que se debe seleccionar una opción y retorna false.
+Si hay un valor seleccionado, muestra una alerta de éxito y después de 5 segundos redirige a la página "/vacantes_pub". -->
 <script>
     function validarFormulario() {
         var select = document.getElementById('idFormaPubl');

@@ -2,14 +2,17 @@
 {% extends "layout.html" %}
 
 {% block content %}
+ <!--se importa el css-->
 <link rel="stylesheet" type="text/css" href="/static/css/design.css">
-
+<!--configura una tabla externa con un borde de 1 píxel, sin espacio de relleno entre celdas y un color de borde negro.-->
     <table width="100%" border="1" cellpadding="0" bordercolor="#000000">
     <tbody>
     <tr>
-    <td color="FFFFFF" bgcolor="#465F5A" valign="top">
+      <!--Esta sección crea una fila de la tabla con una celda que tiene un color de fondo (#5E936F) y, dentro de esta celda, crea dos encabezados-->
+    <td color="FFFFFF" bgcolor="#5E936F" valign="top">
     <right><h3><a href="/area_agregar">Agregar Carrera</a></h3></right>
     <center><h3>CARRERAS REGISTRADAS</h3></center>
+    <!--Esto configura otra tabla dentro de la primera, con atributos similares para el ancho, borde y color del borde.-->
     <table width="100%" border="1" cellpadding="0" bordercolor="#000000">
     <thead>
       <tr>
@@ -24,11 +27,11 @@
         <td width="80%">
            {{i.1}}
         </td>
-
-        <td bgcolor="#2B2D83" width="8%">
+ <!--Edita y Borra parte de los bloques /#/{{i.0}} editar y borrar-->
+        <td bgcolor="#586F60" width="8%">
         <center><a href="/#/{{i.0}}" style="...">Editar</a></center>
         </td>
-        <td bgcolor="#3C3EC5" width="8%">
+        <td bgcolor="#49504B" width="8%">
         <center><a href="/#/{{i.0}}" style="...">Borrar</a></center>
         </td>
         </tr>

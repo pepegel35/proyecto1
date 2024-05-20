@@ -1,6 +1,8 @@
 {% extends "layout.html" %}
 
 {% block content %}
+
+<!--Se Edita el formulario-->
 <link rel="stylesheet" type="text/css" href="/static/css/design.css">
 
 <form action="/area_fedita/{{comentar}}" method="post">
@@ -17,9 +19,11 @@
                 </div>
           </div>
     </div>
+    <!--es un boton al presionar  hace la accion de actualizar-->
           <button type="submit" class="btn btn-primary">Actualizar</button>
 </form>
 <div id="particles-js"></div>
 <script src="/static/js/particles.min.js"></script>
 <script src="/static/js/app.js"></script>
 {% endblock %}
+<!--Finaliza el bloque-->

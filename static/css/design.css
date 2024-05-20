@@ -1,9 +1,13 @@
 *{
-  transition: 0.5s;
+  transition: 0.7s;
 }
 body{
-  background-color: black;
-  color: aliceblue;
+  background-color: rgb(72, 128, 95);
+  background-image: url('/static/imagenes/fondostar.png'); 
+  background-size: cover; 
+  background-repeat: no-repeat; 
+  background-position: center; 
+  color: rgb(216, 240, 230);
 }
 #particles-js{
   position: fixed;
