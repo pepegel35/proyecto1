@@ -1,7 +1,8 @@
-from flask import Flask, render_template, request, redirect, url_for, flash
+from flask import Flask, render_template, request, redirect, url_for, flash, send_file
 import pymysql
-
+from weasyprint import HTML
 app = Flask(__name__)
+import os
 
 @app.route('/')
 def home():
@@ -474,6 +475,40 @@ def puesto_fedita(idP):
             conn.commit()
     return redirect(url_for('puesto'))
 
+@app.route('/generate_pdf', methods=['POST'])
+def generate_pdf():
+    # Obtener datos del formulario
+    data = {
+        "nomPuesto": request.form['nomPuesto'],
+        "codPuesto": request.form['codPuesto'],
+        "idArea": request.form['idArea'],
+        "puestoJefeSup": request.form['puestoJefeSup'],
+        "jornada": request.form['jornada'],
+        "remunMensual": request.form['remunMensual'],
+        "prestaciones": request.form['prestaciones'],
+        "descripcionGeneral": request.form['descripcionGeneral'],
+        "funciones": request.form['funciones'],
+        "edad": request.form['edad'],
+        "sexo": request.form['sexo'],
+        "idEstadoCivil": request.form['idEstadoCivil'],
+        "idEscolaridad": request.form['idEscolaridad'],
+        "idGradoAvance": request.form['idGradoAvance'],
+        "idFormaPubl": request.form['idFormaPubl']
+    }
+
+    # Renderizar plantilla HTML con los datos
+    rendered_html = render_template('pdf.html', data=data)
+
+    # Convertir el HTML a PDF
+    pdf = HTML(string=rendered_html).write_pdf()
+
+    # Guardar el PDF en el sistema de archivos
+    pdf_path = os.path.join(os.path.abspath(os.path.dirname(__file__)), 'static', 'vacante.pdf')
+    with open(pdf_path, 'wb') as f:
+        f.write(pdf)
+
+    # Devolver el PDF como respuesta
+    return send_file(pdf_path, as_attachment=True, download_name='vacante.pdf')
 
 
 

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PDF de Vacante</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        h1, h2, h3, p {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="color: #5e9ca0;">ESTAMOS CONTRATANDO</h1>
+    <hr />
+    <h2 style="color: #2e6c80;">{{ data.nomPuesto }}</h2>
+    <p>&nbsp;</p>
+    <h3><strong>REQUISITOS:</strong></h3>
+    <p>&nbsp;- {{ data.codPuesto }}</p>
+    <p>- {{ data.idArea }}</p>
+    <p>- {{ data.puestoJefeSup }}</p>
+    <p>&nbsp;</p>
+    <h3><strong>Ofrecemos:</strong></h3>
+    <p>- {{ data.jornada }}</p>
+    <p>- {{ data.remunMensual }}</p>
+    <p>- {{ data.prestaciones }}</p>
+    <p>&nbsp;</p>
+    <h2 style="text-align: right;"><span style="color: #3366ff;">Envia tus Datos&nbsp;</span></h2>
+    <p style="text-align: right;"><a href="mailto:example1@gmail.com">example1@gmail.com</a></p>
+    <p style="text-align: right;">(+52)449 4534 534</p>
+    <p style="text-align: right;">www.paginarandom.com</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+</body>
+</html>
